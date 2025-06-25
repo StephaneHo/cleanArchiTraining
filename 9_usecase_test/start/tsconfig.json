@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Alias */
+    "paths": {
+      "@foodsapp/di/*": ["src/di/*"],
+      "@foodsapp/domain/*": ["src/domain/*"],
+      "@foodsapp/application/*": ["src/application/*"],
+      "@foodsapp/infrastructure/*": ["src/infrastructure/*"],
+      "@foodsapp/utils/*": ["src/utils/*"],
+      "@foodsapp/store": ["src/store/store.ts"],
+      "@foodsapp/components/*": ["src/userinterface/components/*"],
+      "@foodsapp/pages/*": ["src/userinterface/pages/*"],
+      "@foodsapp/adapters/*": ["src/adapters/*"]
+    }
+  },
+  "include": ["src"]
+}
