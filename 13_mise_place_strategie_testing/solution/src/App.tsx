@@ -1,6 +1,6 @@
 import { DashboardPage } from "@foodsapp/pages/dahsboard/Dashboard";
-import { FoodConfigurationPage } from "@foodsapp/pages/configuration/Configuration";
-import { FoodPpresentationPage } from "@foodsapp/pages/presentation/Presentation";
+import { FoodDisplayPage } from "@foodsapp/pages/display/FoodDisplay";
+import { FoodEditPage } from "@foodsapp/pages/edit/FoodEditPage";
 import {
   createBrowserRouter,
   Navigate,
@@ -10,12 +10,12 @@ import {
 function App() {
   const router = createBrowserRouter([
     { path: "/", element: <DashboardPage /> },
-    { path: "/configuration", element: <FoodConfigurationPage /> },
+    { path: "/edit", element: <FoodEditPage /> },
     {
-      path: "/configuration/edit/:foodId",
-      element: <FoodConfigurationPage edition={true} />,
+      path: "/edit/:foodId",
+      element: <FoodEditPage update={true} />,
     },
-    { path: "/presentation/:foodId", element: <FoodPpresentationPage /> },
+    { path: "/display/:foodId", element: <FoodDisplayPage /> },
     { path: "*", element: <Navigate to="/" replace /> },
   ]);
   return <RouterProvider router={router} fallbackElement={<DashboardPage />} />;
