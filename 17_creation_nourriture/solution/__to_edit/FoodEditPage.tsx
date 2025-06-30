@@ -41,7 +41,7 @@ export const FoodEditPage = () => {
               fontSize="1.6rem"
               fontWeight="500"
               color="white"
-              data-testid="submit-form-configuration"
+              data-testid="submit-form-edit"
               onClick={() => null}
               _hover={{
                 color: "blue.800",

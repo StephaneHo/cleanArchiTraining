@@ -1,0 +1,46 @@
+import { Heading, Container, Flex, Spinner } from "@chakra-ui/react";
+import { NavBar } from "@foodsapp/components/NavBar/NavBar";
+import { container as DI } from "@foodsapp/di/ioc";
+export const FoodDisplayPage = () => {
+  const { food, isLoading } = DI.resolve("display");
+
+  return (
+    <>
+      <NavBar />
+      <Container
+        bg="blue.100"
+        borderRadius="2rem"
+        margin="2rem auto"
+        paddingY="4.2rem"
+        width="calc(100% - 3.2rem)"
+        minHeight="55.6rem"
+        maxWidth="auto"
+      >
+        {" "}
+        {isLoading ? (
+          <Flex align="center" justify="center">
+            <Spinner
+              color="blue.500"
+              borderWidth="4px"
+              size="xl"
+              marginTop="150px"
+            />
+          </Flex>
+        ) : (
+          <Container maxWidth={"400px"}>
+            <Heading
+              color="black"
+              fontSize="5rem"
+              textAlign="center"
+              fontWeight="300"
+              maxWidth="100rem"
+              data-testid="display-page-title"
+            >
+              {food?.title}
+            </Heading>
+          </Container>
+        )}
+      </Container>
+    </>
+  );
+};
