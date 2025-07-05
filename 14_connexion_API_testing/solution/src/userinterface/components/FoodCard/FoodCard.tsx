@@ -31,7 +31,6 @@ export const FoodCard = ({ food }: FoodCardProps) => {
           height="100%"
           width="100%"
           // onClick={() =>
-          //   handleNavigate("/production/presentation/", food.id)
           // }
           data-testid={`food-card-${food.id}`}
         >

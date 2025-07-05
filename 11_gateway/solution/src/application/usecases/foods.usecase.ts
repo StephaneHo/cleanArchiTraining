@@ -45,7 +45,7 @@ export const getFoodsUseCase = createAsyncThunk(
       return await (foodsGateway as FoodsGateway).getFoods();
     } catch (e) {
       const error = e as Error;
-      rejectWithValue(error);
+      return rejectWithValue(error);
     }
   }
 );

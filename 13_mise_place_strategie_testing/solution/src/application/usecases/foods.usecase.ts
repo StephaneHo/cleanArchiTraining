@@ -45,7 +45,7 @@ export const getFoodsUseCase = createAsyncThunk(
       return foods;
     } catch (e) {
       const error = e as Error;
-      rejectWithValue(error);
+      return rejectWithValue(error);
     }
   },
   {

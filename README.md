@@ -59,3 +59,53 @@ act from react-dom/test-utils has been deprecated in favor of act from react.
 - import {act} from 'react';
 
 * import {act} from 'react-dom/test-utils';
+
+Note 7
+
+- import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+
+* import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+on ne vas pas utiliser les hooks pour react, on va creer nos propres custom hook
+
+Note 8
+
+https://redux-toolkit.js.org/rtk-query/usage/usage-without-react-hooks
+Creating a memoized selector creator
+const createGetPostSelector = createSelector(
+(id: string) => id,
+(id) => api.endpoints.getPost.select(id),
+)
+
+Note 9
+
+https://jestjs.io/docs/mock-functions
+Mock functions allow you to test the links between code by erasing the actual implementation of a function, capturing calls to the function (and the parameters passed in those calls), capturing instances of constructor functions when instantiated with new, and allowing test-time configuration of return values.
+
+There are two ways to mock functions: Either by creating a mock function to use in test code, or writing a manual mock to override a module dependency.
+
+.mock property
+All mock functions have this special .mock property, which is where data about how the function has been called and what the function returned is kept. The .mock property also tracks the value of this for each call, so it is possible to inspect this as well:
+
+Note 10
+https://jestjs.io/docs/expect#expectobjectcontainingobject
+
+xpect.objectContaining(object) matches any received object that recursively matches the expected properties. That is, the expected object is a subset of the received object. Therefore, it matches a received object which contains properties that are present in the expected object.
+
+Instead of literal property values in the expected object, you can use matchers, expect.anything(), and so on.
+
+For example, let's say that we expect an onPress function to be called with an Event object, and all we need to verify is that the event has event.x and event.y properties. We can do that with:
+
+test('onPress gets called with the right thing', () => {
+const onPress = jest.fn();
+simulatePresses(onPress);
+expect(onPress).toHaveBeenCalledWith(
+expect.objectContaining({
+x: expect.any(Number),
+y: expect.any(Number),
+}),
+);
+});
+
+Note 11
+https://creately.com/guides/class-diagram-relationships/
